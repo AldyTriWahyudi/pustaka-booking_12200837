@@ -43,6 +43,13 @@ $routes->get('/logout', function () {
 });
 
 
+$routes->get('/pengguna-list', 'PenggunaController_12200837::index', ['filter'=>'auth']);  
+$routes->get('/pengguna', 'PenggunaController_12200837::form', ['filter'=>'auth']);
+$routes->get('/pengguna/(:num)', 'PenggunaController_12200837::edit/$1', ['filter'=>'auth']);
+$routes->post('/pengguna', 'PenggunaController_12200837::simpan', ['filter'=>'auth']);  
+$routes->patch('/pengguna', 'PenggunaController_12200837::patch', ['filter'=>'auth']);
+$routes->delete('/pengguna', 'PenggunaController_12200837::delete', ['filter'=>'auth']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
